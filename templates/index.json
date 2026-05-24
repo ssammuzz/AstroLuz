@@ -1,0 +1,309 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "newsletter_WXqAAJ": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_9DHFe7": {
+          "type": "heading",
+          "settings": {
+            "heading": "Acceso Exclusivo a Ofertas Premium",
+            "heading_size": "h0"
+          }
+        },
+        "paragraph_DWXqPt": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Sé el primero en conocer promociones especiales, tips de expertos para maximizar tu experiencia, y noticias del Mundial. Suscríbete ahora.</p>"
+          }
+        },
+        "email_form_BJQdYn": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_9DHFe7",
+        "paragraph_DWXqPt",
+        "email_form_BJQdYn"
+      ],
+      "name": "t:sections.newsletter.presets.name",
+      "settings": {
+        "color_scheme": "scheme-tech",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "Cine en casa. Experiencia de mundial en vivo. Imagen 4K nítida, sonido envolvente, conectividad total.",
+            "text_style": "subtitle"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Tu Estadio Personal",
+            "heading_size": "hxxl"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Comprar Ahora",
+            "button_link_1": "shopify://products/hy300-mini-smart-home-projector",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "text",
+        "heading",
+        "button"
+      ],
+      "settings": {
+        "image_overlay_opacity": 60,
+        "image_height": "large",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "scheme-tech",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "multicolumn_MRXE6q": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_TWeVXK": {
+          "type": "column",
+          "settings": {
+            "title": "Altavoz Incorporado",
+            "text": "<p>Audio envolvente de alta calidad. Disfruta del sonido del estadio sin necesidad de equipos adicionales.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_neKT3H": {
+          "type": "column",
+          "settings": {
+            "title": "Imagen 4K Nítida",
+            "text": "<p>Proyección de hasta 200 pulgadas con resolución 4K. Cada detalle del partido es cristalino, como si estuvieras en el estadio.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_337xcJ": {
+          "type": "column",
+          "settings": {
+            "title": "Android TV Integrado",
+            "text": "<p>Sistema operativo Android TV nativo. Acceso instantáneo a Netflix, YouTube, Prime Video y más. Sin dispositivos adicionales.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_3q9NaA": {
+          "type": "column",
+          "settings": {
+            "title": "Conectividad WiFi",
+            "text": "<p>WiFi 6 integrado, Bluetooth 5.0 y múltiples puertos HDMI. Conecta cualquier dispositivo sin complicaciones.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_wrpMrc": {
+          "type": "column",
+          "settings": {
+            "title": "Portátil y Compacto",
+            "text": "<p>Diseño ligero y compacto. Llévalo a cualquier lugar: sala, jardín, reuniones con amigos. Tecnología sin límites.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_TWeVXK",
+        "column_neKT3H",
+        "column_337xcJ",
+        "column_3q9NaA",
+        "column_wrpMrc"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "Tecnología Premium en Tus Manos",
+        "heading_size": "h0",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "Etiqueta de botón",
+        "button_link": "",
+        "columns_desktop": 5,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "color_scheme": "scheme-tech",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "multicolumn_n4PWnH": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_JwNH6L": {
+          "type": "column",
+          "settings": {
+            "title": "Devoluciones Fáciles",
+            "text": "<p>No te gusta? Devuelve sin preguntas en 30 días. Reembolso completo, sin complicaciones.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_6VUKpd": {
+          "type": "column",
+          "settings": {
+            "title": "Garantía 1 Año",
+            "text": "<p>Protección completa durante 1 año. Si algo no funciona, lo reparamos o reemplazamos sin costo adicional.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_wzianA": {
+          "type": "column",
+          "settings": {
+            "title": "Envío Rápido",
+            "text": "<p>Entrega express a toda Bolivia. Tu proyector llega bien embalado, asegurado y en perfectas condiciones. 2-3 días hábiles.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_77Tp4D": {
+          "type": "column",
+          "settings": {
+            "title": "Soporte Técnico 24/7",
+            "text": "<p>Equipo de expertos disponible siempre. Chat, email o teléfono. Resolvemos tus dudas rápidamente y sin complicaciones.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_JwNH6L",
+        "column_6VUKpd",
+        "column_wzianA",
+        "column_77Tp4D"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "Confianza y Respaldo Garantizado",
+        "heading_size": "h0",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "Etiqueta de botón",
+        "button_link": "",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "color_scheme": "scheme-tech",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "featured_product_ztVBpW": {
+      "type": "featured-product",
+      "blocks": {
+        "title_UPRdWP": {
+          "type": "title",
+          "settings": {
+            "heading_size": "hxxl"
+          }
+        },
+        "text_Kghwc9": {
+          "type": "text",
+          "settings": {
+            "text": "Proyector Inteligente Premium",
+            "text_style": "subtitle"
+          }
+        },
+        "price_KUcNiw": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_FmLpFW": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_QcmACe": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_9maJ8r": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_TK8RRx": {
+          "type": "share",
+          "settings": {
+            "share_label": "Compartir en redes"
+          }
+        }
+      },
+      "block_order": [
+        "title_UPRdWP",
+        "text_Kghwc9",
+        "price_KUcNiw",
+        "variant_picker_FmLpFW",
+        "quantity_selector_QcmACe",
+        "buy_buttons_9maJ8r",
+        "share_TK8RRx"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "hy300-mini-smart-home-projector",
+        "color_scheme": "scheme-tech",
+        "secondary_background": true,
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "right",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "newsletter_WXqAAJ",
+    "image_banner",
+    "multicolumn_MRXE6q",
+    "multicolumn_n4PWnH",
+    "featured_product_ztVBpW"
+  ]
+}
