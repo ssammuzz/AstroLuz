@@ -1,0 +1,84 @@
+{{ 'astroglo-phase1.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="astroglo-phase1 astroglo-trust-note">
+  <div class="page-width section-{{ section.id }}-padding">
+    <div class="astroglo-trust-note__box">
+      {%- if section.settings.label != blank -%}
+        <p class="astroglo-section-label">{{ section.settings.label | escape }}</p>
+      {%- endif -%}
+      <h2 class="astroglo-trust-note__heading">{{ section.settings.heading }}</h2>
+      <p class="astroglo-trust-note__text">{{ section.settings.text | escape }}</p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Nota confianza",
+  "tag": "section",
+  "class": "astroglo-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Etiqueta",
+      "default": "Confianza y garantía"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Título",
+      "default": "Pedido confirmado antes del envío"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Texto",
+      "default": "Tu pedido se confirma por WhatsApp antes del envío. Si el producto llega con alguna novedad, debe reportarse dentro del plazo indicado por el proveedor."
+    },
+    {
+      "type": "header",
+      "content": "Espaciado"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 32,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Espacio superior",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 32,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Espacio inferior",
+      "default": 56
+    }
+  ],
+  "presets": [
+    {
+      "name": "Nota confianza"
+    }
+  ]
+}
+{% endschema %}

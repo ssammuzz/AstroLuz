@@ -1,0 +1,119 @@
+{{ 'astroglo-phase1.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="astroglo-phase1 astroglo-includes">
+  <div class="page-width section-{{ section.id }}-padding">
+    <div class="astroglo-includes__header">
+      {%- if section.settings.label != blank -%}
+        <p class="astroglo-section-label">{{ section.settings.label | escape }}</p>
+      {%- endif -%}
+      <h2 class="astroglo-section-heading">{{ section.settings.heading }}</h2>
+    </div>
+
+    <ul class="astroglo-includes__grid" role="list">
+      {%- for block in section.blocks -%}
+        <li class="astroglo-include" {{ block.shopify_attributes }}>
+          <span class="astroglo-include__icon" aria-hidden="true">{{ forloop.index }}</span>
+          <h3 class="astroglo-include__title">{{ block.settings.title | escape }}</h3>
+          {%- if block.settings.text != blank -%}
+            <p class="astroglo-include__text">{{ block.settings.text | escape }}</p>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AstroLuz incluye",
+  "tag": "section",
+  "class": "astroglo-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Etiqueta",
+      "default": "Qué incluye"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Título",
+      "default": "Lo que llega con tu AstroLuz™"
+    },
+    {
+      "type": "header",
+      "content": "Espaciado"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 32,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Espacio superior",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 32,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Espacio inferior",
+      "default": 68
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Elemento",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título",
+          "default": "Proyector astronauta"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texto"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AstroLuz incluye",
+      "blocks": [
+        {
+          "type": "item"
+        },
+        {
+          "type": "item"
+        },
+        {
+          "type": "item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

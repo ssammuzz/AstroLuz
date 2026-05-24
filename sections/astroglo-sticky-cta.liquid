@@ -1,0 +1,82 @@
+{{ 'astroglo-phase1.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign order_link = section.settings.order_link
+  if order_link == blank
+    assign order_link = routes.all_products_collection_url
+  endif
+
+  assign raw_number = section.settings.whatsapp_number | default: shop.phone | default: ''
+  assign whatsapp_number = raw_number | remove: '+' | remove: ' ' | remove: '-' | remove: '(' | remove: ')' | remove: '.'
+  assign whatsapp_message = section.settings.whatsapp_message | url_encode
+-%}
+
+<section class="astroglo-phase1 astroglo-sticky-actions" aria-label="Acciones de pedido">
+  <div class="astroglo-sticky-actions__spacer" aria-hidden="true"></div>
+
+  <div class="astroglo-sticky-actions__bar">
+    <a href="{{ order_link }}" class="astroglo-sticky-actions__order">
+      <span>{{ section.settings.order_label | escape }}</span>
+      {%- if section.settings.payment_text != blank -%}
+        <small>{{ section.settings.payment_text | escape }}</small>
+      {%- endif -%}
+    </a>
+
+    {%- if whatsapp_number != blank -%}
+      <a
+        href="https://wa.me/{{ whatsapp_number }}?text={{ whatsapp_message }}"
+        class="astroglo-sticky-actions__whatsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Escribir por WhatsApp"
+      >
+        {{ 'icon-chat-bubble.svg' | inline_asset_content }}
+        <span>WhatsApp</span>
+      </a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CTA fijo AstroLuz",
+  "tag": "section",
+  "class": "astroglo-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "order_label",
+      "label": "Texto CTA",
+      "default": "Pedir ahora"
+    },
+    {
+      "type": "text",
+      "id": "payment_text",
+      "label": "Texto de confianza",
+      "default": "Paga al recibir"
+    },
+    {
+      "type": "url",
+      "id": "order_link",
+      "label": "Enlace de pedido"
+    },
+    {
+      "type": "text",
+      "id": "whatsapp_number",
+      "label": "Numero de WhatsApp",
+      "info": "Usa formato internacional, por ejemplo 573001234567. Si queda vacio, se usa el telefono de la tienda si existe."
+    },
+    {
+      "type": "text",
+      "id": "whatsapp_message",
+      "label": "Mensaje de WhatsApp",
+      "default": "Hola, quiero pedir el AstroLuz Proyector Galaxia Astronauta."
+    }
+  ],
+  "presets": [
+    {
+      "name": "CTA fijo AstroLuz"
+    }
+  ]
+}
+{% endschema %}

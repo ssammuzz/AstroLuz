@@ -49,9 +49,9 @@
       "reset": "Borrar término de búsqueda"
     },
     "cart": {
-      "view": "Ver carrito ({{ count }})",
-      "item_added": "Artículo agregado a tu carrito",
-      "view_empty_cart": "Ver carrito"
+      "view": "Revisar pedido ({{ count }})",
+      "item_added": "¡Producto reservado! Confirmación por WhatsApp",
+      "view_empty_cart": "Finalizar pedido"
     },
     "share": {
       "copy_to_clipboard": "Copiar enlace",
@@ -287,7 +287,7 @@
   "sections": {
     "header": {
       "announcement": "Anuncio",
-      "menu": "Menú",
+      "menu": "Navegación",
       "cart_count": {
         "one": "{{ count }} artículo",
         "other": "{{ count }} artículos",
@@ -299,7 +299,7 @@
       "caption": "Artículos en el carrito",
       "remove_title": "Eliminar {{ title }}",
       "note": "Instrucciones especiales del pedido",
-      "checkout": "Pagar pedido",
+      "checkout": "Finalizar pedido",
       "empty": "Tu carrito esta vacío",
       "cart_error": "Hubo un error al actualizar tu carrito de compra. Inténtalo de nuevo.",
       "cart_quantity_error_html": "Solo puedes agregar {{ quantity }} de este artículo a tu carrito.",

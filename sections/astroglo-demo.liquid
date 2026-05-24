@@ -1,0 +1,148 @@
+{{ 'astroglo-phase1.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign button_link = section.settings.button_link
+  if button_link == blank
+    assign button_link = routes.all_products_collection_url
+  endif
+-%}
+
+<section class="astroglo-phase1 astroglo-demo">
+  <div class="page-width astroglo-demo__inner section-{{ section.id }}-padding">
+    <div class="astroglo-demo__copy">
+      {%- if section.settings.label != blank -%}
+        <p class="astroglo-section-label">{{ section.settings.label | escape }}</p>
+      {%- endif -%}
+      <h2 class="astroglo-section-heading">{{ section.settings.heading }}</h2>
+      {%- if section.settings.text != blank -%}
+        <p class="astroglo-section-text">{{ section.settings.text | escape }}</p>
+      {%- endif -%}
+
+      <ul class="astroglo-demo__points" role="list">
+        <li>Nebulosa LED</li>
+        <li>Efecto de estrellas</li>
+        <li>Control remoto</li>
+      </ul>
+
+      {%- if section.settings.button_label != blank -%}
+        <a href="{{ button_link }}" class="button button--primary astroglo-demo__button">
+          {{ section.settings.button_label | escape }}
+        </a>
+      {%- endif -%}
+    </div>
+
+    <div class="astroglo-demo__visual" aria-label="{{ section.settings.heading | escape }}">
+      {%- if section.settings.image != blank -%}
+        {{
+          section.settings.image
+          | image_url: width: 900
+          | image_tag:
+            widths: '320, 480, 640, 800, 900',
+            sizes: '(min-width: 990px) 420px, 92vw',
+            alt: section.settings.image_alt,
+            loading: 'lazy',
+            class: 'astroglo-demo__image'
+        }}
+      {%- else -%}
+        <div class="astroglo-demo-scene" aria-hidden="true">
+          <span class="astroglo-demo-scene__glow"></span>
+          <span class="astroglo-demo-scene__stars"></span>
+          <span class="astroglo-demo-scene__projector"></span>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Demo AstroLuz",
+  "tag": "section",
+  "class": "astroglo-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Etiqueta",
+      "default": "Demostracion"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Titulo",
+      "default": "Asi se ve el ambiente galaxia"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Texto",
+      "default": "Proyeccion decorativa con nebulosa LED y puntos de estrella para ambientar la habitacion."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Imagen de demo"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Texto alternativo",
+      "default": "Demostracion del proyector galaxia"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texto del boton",
+      "default": "Pedir ahora"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Enlace del boton"
+    },
+    {
+      "type": "header",
+      "content": "Espaciado"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 32,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Espacio superior",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 32,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Espacio inferior",
+      "default": 56
+    }
+  ],
+  "presets": [
+    {
+      "name": "Demo AstroLuz"
+    }
+  ]
+}
+{% endschema %}

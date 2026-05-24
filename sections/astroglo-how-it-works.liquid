@@ -1,0 +1,133 @@
+{{ 'astroglo-phase1.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section id="como-funciona" class="astroglo-phase1 astroglo-how">
+  <div class="page-width section-{{ section.id }}-padding">
+    <div class="astroglo-how__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="astroglo-how__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      <h2 class="astroglo-how__heading">{{ section.settings.heading }}</h2>
+      {%- if section.settings.text != blank -%}
+        <p class="astroglo-how__text">{{ section.settings.text | escape }}</p>
+      {%- endif -%}
+    </div>
+
+    <ol class="astroglo-how__grid">
+      {%- for block in section.blocks -%}
+        <li class="astroglo-step" {{ block.shopify_attributes }}>
+          <span class="astroglo-step__number">{{ forloop.index }}</span>
+          <h3 class="astroglo-step__title">{{ block.settings.title | escape }}</h3>
+          {%- if block.settings.text != blank -%}
+            <p class="astroglo-step__text">{{ block.settings.text | escape }}</p>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ol>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AstroLuz como funciona",
+  "tag": "section",
+  "class": "astroglo-section",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Etiqueta",
+      "default": "Compra simple y segura"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Título",
+      "default": "Cómo funciona"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Texto",
+      "default": "Haces tu pedido online, lo confirmamos contigo y pagas cuando recibes el producto."
+    },
+    {
+      "type": "header",
+      "content": "Espaciado"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 32,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Espacio superior",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 32,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Espacio inferior",
+      "default": 72
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Paso",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título",
+          "default": "Haces tu pedido online"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texto",
+          "default": "Dejas tus datos para iniciar la solicitud."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AstroLuz como funciona",
+      "blocks": [
+        {
+          "type": "step"
+        },
+        {
+          "type": "step"
+        },
+        {
+          "type": "step"
+        },
+        {
+          "type": "step"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

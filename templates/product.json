@@ -12,113 +12,308 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "astroluz_styles": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{{ 'astroluz.css' | asset_url | stylesheet_tag }}"
+          }
+        },
+        "astroluz_eyebrow": {
+          "type": "text",
+          "settings": {
+            "text": "AstroLuz™ Proyector Galaxia",
+            "text_style": "uppercase"
+          }
+        },
         "title": {
           "type": "title",
+          "settings": {}
+        },
+        "astroluz_promise": {
+          "type": "text",
           "settings": {
+            "text": "Proyector LED decorativo con efecto nebulosa y estrellas. Ideal para habitaciones, setups y regalos.",
+            "text_style": "subtitle"
           }
         },
         "price": {
           "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
           "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
           }
         },
-        "description": {
-          "type": "description",
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
           "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
           }
         },
-        "collapsible-row-1": {
-          "type": "collapsible_tab",
+        "astroluz_trust_minimal": {
+          "type": "custom_liquid",
           "settings": {
-            "heading": "Product features",
-            "icon": "star",
-            "content": "",
-            "page": "product-features"
-          }
-        },
-        "collapsible-row-0": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Materials and care",
-            "icon": "leaf",
-            "content": "",
-            "page": "materials-and-care"
-          }
-        },
-        "collapsible-row-2": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Merchandising tips",
-            "icon": "check_mark",
-            "content": "",
-            "page": "merchandising-tips"
-          }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
+            "custom_liquid": "<div class='astroluz-product-trust'><span>Paga al recibir</span><span>Confirmamos por WhatsApp</span><span>Envío en Colombia</span></div><p class='astroluz-product-note'>Paga al recibir · Confirmación por WhatsApp</p>"
           }
         }
       },
       "block_order": [
+        "astroluz_styles",
+        "astroluz_eyebrow",
         "title",
+        "astroluz_promise",
         "price",
-        "description",
-        "collapsible-row-1",
-        "collapsible-row-0",
-        "collapsible-row-2",
-        "share"
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "astroluz_trust_minimal"
       ],
       "settings": {
         "enable_sticky_info": true,
-        "color_scheme": "",
-        "media_size": "small",
-        "constrain_to_viewport": false,
-        "media_fit": "cover",
+        "color_scheme": "scheme-tech",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
         "gallery_layout": "thumbnail_slider",
-        "media_position": "right",
+        "media_position": "left",
         "image_zoom": "lightbox",
         "mobile_thumbnails": "hide",
-        "hide_variants": true,
+        "hide_variants": false,
         "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 24,
+        "padding_bottom": 28
       }
     },
-    "quick-order-list": {
-      "type": "quick-order-list",
+    "astroluz_problem": {
+      "type": "astroglo-statement",
       "settings": {
-        "variants_per_page": 50,
-        "show_image": true,
-        "show_sku": true,
-        "color_scheme": "scheme-2",
-        "padding_top": 36,
-        "padding_bottom": 16
+        "label": "Problema",
+        "heading": "Tu habitación se siente aburrida, fría o sin ambiente.",
+        "text": "",
+        "tone": "light",
+        "padding_top": 56,
+        "padding_bottom": 28
       }
     },
-    "related-products": {
-      "type": "related-products",
+    "astroluz_solution": {
+      "type": "astroglo-statement",
       "settings": {
-        "heading": "Other industry favorites",
-        "heading_size": "h2",
-        "products_to_show": 5,
-        "columns_desktop": 5,
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 44
+        "label": "Solución",
+        "heading": "AstroLuz™ transforma cualquier espacio con un efecto galaxia relajante en segundos.",
+        "text": "Ideal para descansar, decorar, grabar contenido o crear un setup más visual.",
+        "tone": "light",
+        "padding_top": 28,
+        "padding_bottom": 56
+      }
+    },
+    "astroluz_benefits": {
+      "type": "astroglo-benefits",
+      "blocks": {
+        "benefit_nebulosa": {
+          "type": "benefit",
+          "settings": {
+            "title": "Efecto nebulosa y estrellas",
+            "text": "Proyección de alta definición con múltiples colores."
+          }
+        },
+        "benefit_remote": {
+          "type": "benefit",
+          "settings": {
+            "title": "Control remoto",
+            "text": "Ajusta el brillo, velocidad y colores a distancia."
+          }
+        },
+        "benefit_head": {
+          "type": "benefit",
+          "settings": {
+            "title": "Cabeza ajustable",
+            "text": "Gira 360° para proyectar en cualquier ángulo."
+          }
+        },
+        "benefit_gift": {
+          "type": "benefit",
+          "settings": {
+            "title": "Ideal para regalo",
+            "text": "Perfecto para habitaciones, setups o escritorios."
+          }
+        },
+        "benefit_easy": {
+          "type": "benefit",
+          "settings": {
+            "title": "Fácil de usar",
+            "text": "Conecta y disfruta de una galaxia instantánea."
+          }
+        }
+      },
+      "block_order": [
+        "benefit_nebulosa",
+        "benefit_remote",
+        "benefit_head",
+        "benefit_gift",
+        "benefit_easy"
+      ],
+      "settings": {
+        "label": "Beneficios",
+        "heading": "Diseñado para transformar tu espacio",
+        "padding_top": 60,
+        "padding_bottom": 64
+      }
+    },
+    "astroluz_how_it_works": {
+      "type": "astroglo-how-it-works",
+      "blocks": {
+        "step_order": {
+          "type": "step",
+          "settings": {
+            "title": "Pedido online",
+            "text": "Inicia tu solicitud en segundos."
+          }
+        },
+        "step_whatsapp": {
+          "type": "step",
+          "settings": {
+            "title": "WhatsApp",
+            "text": "Confirmamos tus datos antes del envío."
+          }
+        },
+        "step_delivery": {
+          "type": "step",
+          "settings": {
+            "title": "Recibes",
+            "text": "Enviamos a tu dirección en Colombia."
+          }
+        },
+        "step_payment": {
+          "type": "step",
+          "settings": {
+            "title": "Pagas",
+            "text": "Pagas al recibir el producto."
+          }
+        }
+      },
+      "block_order": [
+        "step_order",
+        "step_whatsapp",
+        "step_delivery",
+        "step_payment"
+      ],
+      "settings": {
+        "eyebrow": "Compra simple",
+        "heading": "Cómo funciona",
+        "text": "Sin pagos anticipados: confirmamos tu pedido antes del envío.",
+        "padding_top": 40,
+        "padding_bottom": 48
+      }
+    },
+    "astroluz_includes": {
+      "type": "astroglo-includes",
+      "blocks": {
+        "item_astro": {
+          "type": "item",
+          "settings": {
+            "title": "Proyector Astronauta Galaxia",
+            "text": "El protagonista de tu habitación."
+          }
+        },
+        "item_remote": {
+          "type": "item",
+          "settings": {
+            "title": "Control remoto",
+            "text": "Pilas no incluidas."
+          }
+        },
+        "item_cable": {
+          "type": "item",
+          "settings": {
+            "title": "Cable USB",
+            "text": "Conexión estándar."
+          }
+        },
+        "item_box": {
+          "type": "item",
+          "settings": {
+            "title": "Empaque",
+            "text": "Caja original AstroLuz."
+          }
+        }
+      },
+      "block_order": [
+        "item_astro",
+        "item_remote",
+        "item_cable",
+        "item_box"
+      ],
+      "settings": {
+        "label": "Qué incluye",
+        "heading": "Qué incluye tu pedido",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "astroluz_faq": {
+      "type": "astroglo-faq",
+      "blocks": {
+        "faq_payment": {
+          "type": "question",
+          "settings": {
+            "question": "¿Cuándo pago?",
+            "answer": "Pagas únicamente cuando recibes tu pedido en tu domicilio."
+          }
+        },
+        "faq_confirmation": {
+          "type": "question",
+          "settings": {
+            "question": "¿Cómo confirmo mi pedido?",
+            "answer": "Te contactaremos por WhatsApp para validar datos antes del envío."
+          }
+        },
+        "faq_time": {
+          "type": "question",
+          "settings": {
+            "question": "¿Cuánto tarda el envío?",
+            "answer": "Depende de tu ciudad y cobertura logística."
+          }
+        }
+      },
+      "block_order": [
+        "faq_payment",
+        "faq_confirmation",
+        "faq_time"
+      ],
+      "settings": {
+        "label": "FAQ",
+        "heading": "Preguntas frecuentes",
+        "padding_top": 60,
+        "padding_bottom": 64
+      }
+    },
+    "astroluz_final_cta": {
+      "type": "astroglo-final-cta",
+      "settings": {
+        "heading": "Dale a tu habitación un ambiente único con AstroLuz™.",
+        "button_label": "Pedir ahora",
+        "button_link": "#ProductInfo-main",
+        "padding_top": 72,
+        "padding_bottom": 84
       }
     }
   },
   "order": [
     "main",
-    "quick-order-list",
-    "related-products"
+    "astroluz_problem",
+    "astroluz_solution",
+    "astroluz_benefits",
+    "astroluz_how_it_works",
+    "astroluz_includes",
+    "astroluz_faq",
+    "astroluz_final_cta"
   ]
 }

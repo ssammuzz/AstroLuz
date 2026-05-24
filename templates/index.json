@@ -9,301 +9,179 @@
  */
 {
   "sections": {
-    "newsletter_WXqAAJ": {
-      "type": "newsletter",
-      "blocks": {
-        "heading_9DHFe7": {
-          "type": "heading",
-          "settings": {
-            "heading": "Acceso Exclusivo a Ofertas Premium",
-            "heading_size": "h0"
-          }
-        },
-        "paragraph_DWXqPt": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>Sé el primero en conocer promociones especiales, tips de expertos para maximizar tu experiencia, y noticias del Mundial. Suscríbete ahora.</p>"
-          }
-        },
-        "email_form_BJQdYn": {
-          "type": "email_form",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "heading_9DHFe7",
-        "paragraph_DWXqPt",
-        "email_form_BJQdYn"
-      ],
-      "name": "t:sections.newsletter.presets.name",
+    "astroluz_hero": {
+      "type": "astroglo-hero",
       "settings": {
-        "color_scheme": "scheme-tech",
-        "full_width": true,
-        "padding_top": 60,
-        "padding_bottom": 60
+        "eyebrow": "AstroLuz™ Proyector Galaxia Astronauta",
+        "heading": "Transforma tu habitación en una galaxia en segundos",
+        "subheading": "Proyector LED decorativo con efecto nebulosa, estrellas y control remoto. Ideal para habitaciones, setups, escritorios y regalos.",
+        "review_text": "Clientes satisfechos",
+        "button_label": "Pedir ahora",
+        "button_link": "/products/lampara-galaxia-astronauta",
+        "microcopy": "Paga al recibir • Confirmación por WhatsApp • Envío en Colombia",
+        "padding_top": 32,
+        "padding_bottom": 36
       }
     },
-    "image_banner": {
-      "type": "image-banner",
+    "astroluz_trust_bar": {
+      "type": "astroglo-trust-bar",
       "blocks": {
-        "text": {
-          "type": "text",
+        "cash_on_delivery": {
+          "type": "trust_item",
           "settings": {
-            "text": "Cine en casa. Experiencia de mundial en vivo. Imagen 4K nítida, sonido envolvente, conectividad total.",
-            "text_style": "subtitle"
+            "icon": "cash",
+            "title": "Pago contra entrega",
+            "text": "Pagas cuando recibes."
           }
         },
-        "heading": {
-          "type": "heading",
+        "whatsapp_confirmation": {
+          "type": "trust_item",
           "settings": {
-            "heading": "Tu Estadio Personal",
-            "heading_size": "hxxl"
+            "icon": "whatsapp",
+            "title": "Confirmación por WhatsApp",
+            "text": "Validamos tus datos antes del envío."
           }
         },
-        "button": {
-          "type": "buttons",
+        "colombia_shipping": {
+          "type": "trust_item",
           "settings": {
-            "button_label_1": "Comprar Ahora",
-            "button_link_1": "shopify://products/hy300-mini-smart-home-projector",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "icon": "shipping",
+            "title": "Envío en Colombia",
+            "text": "Despacho con operador logístico."
+          }
+        },
+        "supplier_guarantee": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "guarantee",
+            "title": "Garantía del proveedor",
+            "text": "Según condiciones del proveedor."
           }
         }
       },
       "block_order": [
-        "text",
-        "heading",
-        "button"
+        "cash_on_delivery",
+        "whatsapp_confirmation",
+        "colombia_shipping",
+        "supplier_guarantee"
       ],
       "settings": {
-        "image_overlay_opacity": 60,
-        "image_height": "large",
-        "image_behavior": "none",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": true,
-        "color_scheme": "scheme-tech",
-        "stack_images_on_mobile": true,
-        "mobile_content_alignment": "center",
-        "show_text_below": false
+        "padding_top": 16,
+        "padding_bottom": 16
       }
     },
-    "multicolumn_MRXE6q": {
-      "type": "multicolumn",
+    "astroluz_how_it_works": {
+      "type": "astroglo-how-it-works",
       "blocks": {
-        "column_TWeVXK": {
-          "type": "column",
+        "step_order": {
+          "type": "step",
           "settings": {
-            "title": "Altavoz Incorporado",
-            "text": "<p>Audio envolvente de alta calidad. Disfruta del sonido del estadio sin necesidad de equipos adicionales.</p>",
-            "link_label": "",
-            "link": ""
+            "title": "Haces tu pedido online",
+            "text": "Dejas tus datos para iniciar la solicitud."
           }
         },
-        "column_neKT3H": {
-          "type": "column",
+        "step_whatsapp": {
+          "type": "step",
           "settings": {
-            "title": "Imagen 4K Nítida",
-            "text": "<p>Proyección de hasta 200 pulgadas con resolución 4K. Cada detalle del partido es cristalino, como si estuvieras en el estadio.</p>",
-            "link_label": "",
-            "link": ""
+            "title": "Confirmamos por WhatsApp",
+            "text": "Validamos dirección, producto y disponibilidad."
           }
         },
-        "column_337xcJ": {
-          "type": "column",
+        "step_delivery": {
+          "type": "step",
           "settings": {
-            "title": "Android TV Integrado",
-            "text": "<p>Sistema operativo Android TV nativo. Acceso instantáneo a Netflix, YouTube, Prime Video y más. Sin dispositivos adicionales.</p>",
-            "link_label": "",
-            "link": ""
+            "title": "Recibes en casa",
+            "text": "El pedido se envía a la dirección confirmada."
           }
         },
-        "column_3q9NaA": {
-          "type": "column",
+        "step_payment": {
+          "type": "step",
           "settings": {
-            "title": "Conectividad WiFi",
-            "text": "<p>WiFi 6 integrado, Bluetooth 5.0 y múltiples puertos HDMI. Conecta cualquier dispositivo sin complicaciones.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_wrpMrc": {
-          "type": "column",
-          "settings": {
-            "title": "Portátil y Compacto",
-            "text": "<p>Diseño ligero y compacto. Llévalo a cualquier lugar: sala, jardín, reuniones con amigos. Tecnología sin límites.</p>",
-            "link_label": "",
-            "link": ""
+            "title": "Pagas al recibir",
+            "text": "Realizas el pago cuando el producto llega."
           }
         }
       },
       "block_order": [
-        "column_TWeVXK",
-        "column_neKT3H",
-        "column_337xcJ",
-        "column_3q9NaA",
-        "column_wrpMrc"
+        "step_order",
+        "step_whatsapp",
+        "step_delivery",
+        "step_payment"
       ],
-      "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "title": "Tecnología Premium en Tus Manos",
-        "heading_size": "h0",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "button_label": "Etiqueta de botón",
-        "button_link": "",
-        "columns_desktop": 5,
-        "column_alignment": "center",
-        "background_style": "primary",
-        "color_scheme": "scheme-tech",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 60,
-        "padding_bottom": 60
+        "eyebrow": "Compra simple",
+        "heading": "Cómo funciona",
+        "text": "Sin pagos anticipados: confirmamos tu pedido antes del envío.",
+        "padding_top": 52,
+        "padding_bottom": 56
       }
     },
-    "multicolumn_n4PWnH": {
-      "type": "multicolumn",
+    "astroluz_faq": {
+      "type": "astroglo-faq",
       "blocks": {
-        "column_JwNH6L": {
-          "type": "column",
+        "faq_payment": {
+          "type": "question",
           "settings": {
-            "title": "Devoluciones Fáciles",
-            "text": "<p>No te gusta? Devuelve sin preguntas en 30 días. Reembolso completo, sin complicaciones.</p>",
-            "link_label": "",
-            "link": ""
+            "question": "¿Cuándo pago?",
+            "answer": "Pagas al recibir tu pedido, después de la confirmación por WhatsApp."
           }
         },
-        "column_6VUKpd": {
-          "type": "column",
+        "faq_time": {
+          "type": "question",
           "settings": {
-            "title": "Garantía 1 Año",
-            "text": "<p>Protección completa durante 1 año. Si algo no funciona, lo reparamos o reemplazamos sin costo adicional.</p>",
-            "link_label": "",
-            "link": ""
+            "question": "¿Cuánto tarda el envío?",
+            "answer": "El tiempo de entrega depende de tu ciudad y del operador logístico. Lo confirmamos por WhatsApp antes del envío."
           }
         },
-        "column_wzianA": {
-          "type": "column",
+        "faq_coverage": {
+          "type": "question",
           "settings": {
-            "title": "Envío Rápido",
-            "text": "<p>Entrega express a toda Bolivia. Tu proyector llega bien embalado, asegurado y en perfectas condiciones. 2-3 días hábiles.</p>",
-            "link_label": "",
-            "link": ""
+            "question": "¿Dónde entregan?",
+            "answer": "Realizamos entregas en Colombia en zonas con cobertura del operador logístico."
           }
         },
-        "column_77Tp4D": {
-          "type": "column",
+        "faq_includes": {
+          "type": "question",
           "settings": {
-            "title": "Soporte Técnico 24/7",
-            "text": "<p>Equipo de expertos disponible siempre. Chat, email o teléfono. Resolvemos tus dudas rápidamente y sin complicaciones.</p>",
-            "link_label": "",
-            "link": ""
+            "question": "¿Qué incluye el producto?",
+            "answer": "Proyector astronauta, control remoto, cable de alimentación, empaque del producto y manual solo si el proveedor lo confirma."
+          }
+        },
+        "faq_guarantee": {
+          "type": "question",
+          "settings": {
+            "question": "¿Tiene garantía?",
+            "answer": "Cuenta con garantía del proveedor según sus condiciones. Te indicamos el proceso por WhatsApp si necesitas soporte."
+          }
+        },
+        "faq_confirmation": {
+          "type": "question",
+          "settings": {
+            "question": "¿Cómo confirmo mi pedido?",
+            "answer": "Después de hacer tu pedido online, te contactamos por WhatsApp para confirmar datos, dirección y disponibilidad."
           }
         }
       },
       "block_order": [
-        "column_JwNH6L",
-        "column_6VUKpd",
-        "column_wzianA",
-        "column_77Tp4D"
+        "faq_payment",
+        "faq_time",
+        "faq_coverage",
+        "faq_includes",
+        "faq_guarantee",
+        "faq_confirmation"
       ],
-      "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "title": "Confianza y Respaldo Garantizado",
-        "heading_size": "h0",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "button_label": "Etiqueta de botón",
-        "button_link": "",
-        "columns_desktop": 4,
-        "column_alignment": "center",
-        "background_style": "primary",
-        "color_scheme": "scheme-tech",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
-    "featured_product_ztVBpW": {
-      "type": "featured-product",
-      "blocks": {
-        "title_UPRdWP": {
-          "type": "title",
-          "settings": {
-            "heading_size": "hxxl"
-          }
-        },
-        "text_Kghwc9": {
-          "type": "text",
-          "settings": {
-            "text": "Proyector Inteligente Premium",
-            "text_style": "subtitle"
-          }
-        },
-        "price_KUcNiw": {
-          "type": "price",
-          "settings": {}
-        },
-        "variant_picker_FmLpFW": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
-          }
-        },
-        "quantity_selector_QcmACe": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "buy_buttons_9maJ8r": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
-          }
-        },
-        "share_TK8RRx": {
-          "type": "share",
-          "settings": {
-            "share_label": "Compartir en redes"
-          }
-        }
-      },
-      "block_order": [
-        "title_UPRdWP",
-        "text_Kghwc9",
-        "price_KUcNiw",
-        "variant_picker_FmLpFW",
-        "quantity_selector_QcmACe",
-        "buy_buttons_9maJ8r",
-        "share_TK8RRx"
-      ],
-      "name": "t:sections.featured-product.presets.name",
-      "settings": {
-        "product": "hy300-mini-smart-home-projector",
-        "color_scheme": "scheme-tech",
-        "secondary_background": true,
-        "media_size": "large",
-        "constrain_to_viewport": true,
-        "media_fit": "contain",
-        "media_position": "right",
-        "image_zoom": "lightbox",
-        "hide_variants": false,
-        "enable_video_looping": false,
-        "padding_top": 80,
-        "padding_bottom": 80
+        "label": "FAQ",
+        "heading": "Preguntas frecuentes",
+        "padding_top": 52,
+        "padding_bottom": 56
       }
     }
   },
   "order": [
-    "newsletter_WXqAAJ",
-    "image_banner",
-    "multicolumn_MRXE6q",
-    "multicolumn_n4PWnH",
-    "featured_product_ztVBpW"
+    "astroluz_hero",
+    "astroluz_trust_bar",
+    "astroluz_how_it_works",
+    "astroluz_faq"
   ]
 }

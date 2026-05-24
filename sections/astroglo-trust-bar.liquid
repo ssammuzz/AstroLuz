@@ -1,0 +1,142 @@
+{{ 'astroglo-phase1.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="astroglo-phase1 astroglo-trust-bar">
+  <div class="page-width section-{{ section.id }}-padding">
+    <ul class="astroglo-trust-bar__list" role="list">
+      {%- for block in section.blocks -%}
+        <li class="astroglo-trust-bar__item" {{ block.shopify_attributes }}>
+          <span class="astroglo-trust-bar__icon" aria-hidden="true">
+            {%- case block.settings.icon -%}
+              {%- when 'cash' -%}
+                {{ 'icon-price-tag.svg' | inline_asset_content }}
+              {%- when 'whatsapp' -%}
+                {{ 'icon-chat-bubble.svg' | inline_asset_content }}
+              {%- when 'shipping' -%}
+                {{ 'icon-truck.svg' | inline_asset_content }}
+              {%- when 'guarantee' -%}
+                {{ 'icon-check-mark.svg' | inline_asset_content }}
+            {%- endcase -%}
+          </span>
+          <span>
+            <strong class="astroglo-trust-bar__title">{{ block.settings.title | escape }}</strong>
+            {%- if block.settings.text != blank -%}
+              <span class="astroglo-trust-bar__text">{{ block.settings.text | escape }}</span>
+            {%- endif -%}
+          </span>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Barra confianza",
+  "tag": "section",
+  "class": "astroglo-section",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Espaciado"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 12,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Espacio superior",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 12,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Espacio inferior",
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "trust_item",
+      "name": "Elemento",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icono",
+          "default": "cash",
+          "options": [
+            {
+              "value": "cash",
+              "label": "Pago"
+            },
+            {
+              "value": "whatsapp",
+              "label": "WhatsApp"
+            },
+            {
+              "value": "shipping",
+              "label": "Envío"
+            },
+            {
+              "value": "guarantee",
+              "label": "Garantía"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título",
+          "default": "Pago contra entrega"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texto",
+          "default": "Pagas cuando recibes."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Barra confianza",
+      "blocks": [
+        {
+          "type": "trust_item"
+        },
+        {
+          "type": "trust_item"
+        },
+        {
+          "type": "trust_item"
+        },
+        {
+          "type": "trust_item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

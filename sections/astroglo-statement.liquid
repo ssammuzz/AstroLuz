@@ -1,0 +1,103 @@
+{{ 'astroglo-phase1.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="astroglo-phase1 astroglo-statement astroglo-statement--{{ section.settings.tone }}">
+  <div class="page-width section-{{ section.id }}-padding">
+    <div class="astroglo-statement__inner">
+      {%- if section.settings.label != blank -%}
+        <p class="astroglo-section-label">{{ section.settings.label | escape }}</p>
+      {%- endif -%}
+
+      <h2 class="astroglo-statement__heading">{{ section.settings.heading }}</h2>
+
+      {%- if section.settings.text != blank -%}
+        <p class="astroglo-statement__text">{{ section.settings.text | escape }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AstroLuz mensaje",
+  "tag": "section",
+  "class": "astroglo-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Etiqueta",
+      "default": "Problema"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Título",
+      "default": "Tu habitación se siente aburrida o sin ambiente."
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Texto"
+    },
+    {
+      "type": "select",
+      "id": "tone",
+      "label": "Estilo",
+      "default": "dark",
+      "options": [
+        {
+          "value": "dark",
+          "label": "Oscuro"
+        },
+        {
+          "value": "light",
+          "label": "Claro"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Espaciado"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 28,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Espacio superior",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 28,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Espacio inferior",
+      "default": 56
+    }
+  ],
+  "presets": [
+    {
+      "name": "AstroLuz mensaje"
+    }
+  ]
+}
+{% endschema %}

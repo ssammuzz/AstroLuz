@@ -1,0 +1,237 @@
+/* AstroLuz™ Premium Overhaul */
+
+:root {
+  --luz-bg: #ffffff;
+  --luz-bg-alt: #f8f8f9;
+  --luz-text: #121212;
+  --luz-text-alt: #5a5a5a;
+  --luz-accent: #f4c950;
+  --luz-border: #efefef;
+  --luz-radius: 16px;
+  --luz-radius-sm: 8px;
+}
+
+/* Base Body & Global */
+body {
+  letter-spacing: -0.01em;
+}
+
+/* Subtle Hero Glow */
+product-info[id^="MainProduct-"],
+.astroglo-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--luz-bg);
+}
+
+.astroglo-hero::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 40%;
+  background: radial-gradient(circle, rgba(244, 201, 80, 0.08) 0%, transparent 70%);
+  filter: blur(60px);
+  z-index: 0;
+  pointer-events: none;
+  animation: slowGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes slowGlow {
+  0% { opacity: 0.5; transform: translateX(-50%) scale(1); }
+  100% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+}
+
+.astroglo-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; /* Reduced from 3rem */
+}
+
+/* Gallery Styling */
+.astroglo-hero-gallery__main,
+.product__media,
+.thumbnail {
+  border-radius: var(--luz-radius);
+  border: 1px solid var(--luz-border) !important;
+  background: var(--luz-bg-alt);
+  overflow: hidden;
+}
+
+.astroglo-hero-gallery__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Copy & Typography */
+.astroglo-hero__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; /* Reduced from 1.5rem */
+}
+
+.astroglo-hero__heading {
+  margin: 0;
+  color: var(--luz-text);
+  font-size: clamp(2.8rem, 9vw, 4.4rem);
+  line-height: 1.1;
+  font-weight: 850;
+  letter-spacing: -0.02em;
+}
+
+.astroglo-hero__subtitle {
+  color: var(--luz-text-alt);
+  font-size: 1.7rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.astroglo-product-price {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+}
+
+.astroglo-product-price__current {
+  color: var(--luz-text);
+  font-size: 3.2rem;
+  font-weight: 900;
+}
+
+/* Form & CTA */
+.astroglo-product-form {
+  margin-top: 0.8rem;
+}
+
+.astroglo-hero__button.button {
+  min-height: 5.8rem;
+  width: 100%;
+  border-radius: 100px;
+  color: #000;
+  background: var(--luz-accent);
+  font-size: 1.8rem;
+  font-weight: 900;
+  box-shadow: 0 6px 20px rgba(244, 201, 80, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Professional Trust Badges Refactor */
+.astroluz-product-trust {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin: 1.2rem 0;
+  padding: 1.2rem;
+  background: #f0f4f8;
+  border-radius: 8px;
+  border: 1px solid #d1d9e0;
+}
+
+.astroluz-product-trust span {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.35rem;
+  color: #24292f;
+  font-weight: 700;
+}
+
+.astroluz-product-trust span::before {
+  content: "✓";
+  color: #2e7d32;
+  font-weight: 900;
+}
+
+.astroluz-product-note {
+  color: #57606a;
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Custom Sections Spacing */
+.astroglo-section {
+  background: var(--luz-bg);
+  padding: 3rem 0; /* Reduced from 6rem */
+}
+
+.astroglo-section-label {
+  color: #c49a2a;
+  font-weight: 800;
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.astroglo-section-heading {
+  color: var(--luz-text);
+  font-size: clamp(2.4rem, 7vw, 3.4rem);
+  font-weight: 850;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+/* Information Density for Steps/Includes */
+.astroglo-step, .astroglo-include {
+  border-radius: var(--luz-radius);
+  padding: 1.8rem;
+  border: 1px solid var(--luz-border);
+  background: var(--luz-bg);
+  margin-bottom: 1rem;
+}
+
+.astroglo-step__title, .astroglo-include__title {
+  font-size: 1.7rem;
+  font-weight: 800;
+  margin: 0.5rem 0;
+}
+
+/* Contrast Fixes */
+.astroglo-benefits .astroglo-section-heading {
+  color: var(--luz-text);
+}
+
+/* Footer Professionalization */
+.footer {
+  border-top: 1px solid var(--luz-border);
+  background: #f8f8f9;
+}
+
+.footer-block__heading {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--luz-text);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+@media screen and (min-width: 990px) {
+  .astroglo-hero__inner {
+    flex-direction: row;
+    align-items: center;
+    gap: 6rem;
+  }
+  
+  .astroglo-hero__visual,
+  .astroglo-hero__copy {
+    flex: 1;
+  }
+  
+  .astroglo-hero__button.button {
+    max-width: 40rem;
+  }
+
+  .astroluz-product-trust {
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+  }
+}

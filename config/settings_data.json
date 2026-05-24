@@ -10,19 +10,19 @@
 {
   "current": {
     "logo_width": 70,
-    "type_header_font": "playfair_display_n4",
-    "heading_scale": 140,
-    "type_body_font": "inter_n4",
-    "body_scale": 110,
-    "page_width": 1400,
-    "spacing_sections": 48,
-    "spacing_grid_horizontal": 20,
-    "spacing_grid_vertical": 20,
+    "type_header_font": "jost_n6",
+    "heading_scale": 115,
+    "type_body_font": "jost_n4",
+    "body_scale": 105,
+    "page_width": 1200,
+    "spacing_sections": 40,
+    "spacing_grid_horizontal": 12,
+    "spacing_grid_vertical": 12,
     "animations_reveal_on_scroll": true,
-    "animations_hover_elements": "3d-lift",
+    "animations_hover_elements": "default",
     "buttons_border_thickness": 0,
     "buttons_border_opacity": 100,
-    "buttons_radius": 8,
+    "buttons_radius": 40,
     "buttons_shadow_opacity": 25,
     "buttons_shadow_horizontal_offset": 0,
     "buttons_shadow_vertical_offset": 12,
@@ -105,8 +105,8 @@
     "badge_corner_radius": 40,
     "sale_badge_color_scheme": "scheme-5",
     "sold_out_badge_color_scheme": "scheme-3",
-    "brand_headline": "",
-    "brand_description": "<p></p>",
+    "brand_headline": "AstroLuz™",
+    "brand_description": "<p>Tienda oficial de iluminación ambiental premium. Transformamos tu hogar en un espacio único con tecnología galaxia.</p>",
     "brand_image_width": 100,
     "social_facebook_link": "",
     "social_instagram_link": "",
@@ -188,23 +188,23 @@
       },
       "scheme-5": {
         "settings": {
-          "background": "#323841",
+          "background": "#f7f7f7",
           "background_gradient": "",
-          "text": "#ffffff",
-          "button": "#b7aca2",
-          "button_label": "#262626",
-          "secondary_button_label": "#ffffff",
-          "shadow": "#001128"
+          "text": "#111111",
+          "button": "#f4c950",
+          "button_label": "#111111",
+          "secondary_button_label": "#111111",
+          "shadow": "#000000"
         }
       },
       "scheme-tech": {
         "settings": {
-          "background": "#0a0a0a",
+          "background": "#ffffff",
           "background_gradient": "",
-          "text": "#ffffff",
-          "button": "#0066ff",
-          "button_label": "#ffffff",
-          "secondary_button_label": "#0066ff",
+          "text": "#111111",
+          "button": "#f4c950",
+          "button_label": "#111111",
+          "secondary_button_label": "#111111",
           "shadow": "#000000"
         }
       }

@@ -1,0 +1,1260 @@
+.astroglo-phase1 {
+  --astro-bg: #070708;
+  --astro-panel: #101014;
+  --astro-panel-soft: rgba(255, 255, 255, 0.06);
+  --astro-line: rgba(255, 255, 255, 0.14);
+  --astro-text: #ffffff;
+  --astro-muted: #d8d9df;
+  --astro-ink: #15110b;
+  --astro-warm: #f4c950;
+  --astro-coral: #ff7a5c;
+  --astro-teal: #38e8d0;
+  --astro-cream: #f7f2e8;
+  letter-spacing: 0;
+}
+
+.astroglo-phase1 *,
+.astroglo-phase1 *::before,
+.astroglo-phase1 *::after {
+  letter-spacing: 0;
+}
+
+.shopify-section.astroglo-section + .shopify-section.astroglo-section {
+  margin-top: 0;
+}
+
+.astroglo-hero {
+  position: relative;
+  overflow: hidden;
+  color: var(--astro-text);
+  background:
+    linear-gradient(150deg, rgba(56, 232, 208, 0.08), transparent 34%),
+    linear-gradient(20deg, rgba(255, 122, 92, 0.1), transparent 42%),
+    var(--astro-bg);
+}
+
+.astroglo-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.42;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.85) 0 1px, transparent 1.4px),
+    radial-gradient(circle, rgba(56, 232, 208, 0.8) 0 1px, transparent 1.6px);
+  background-position:
+    0 0,
+    38px 52px;
+  background-size:
+    92px 92px,
+    132px 132px;
+  pointer-events: none;
+}
+
+.astroglo-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1.4rem;
+  align-items: center;
+}
+
+.astroglo-hero__copy {
+  order: 2;
+  max-width: 64rem;
+}
+
+.astroglo-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0 0 1rem;
+  padding: 0.6rem 0.85rem;
+  border: 1px solid rgba(244, 201, 80, 0.35);
+  border-radius: 8px;
+  color: var(--astro-warm);
+  background: rgba(244, 201, 80, 0.08);
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+.astroglo-eyebrow::before {
+  content: "";
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: var(--astro-teal);
+  box-shadow: 0 0 18px rgba(56, 232, 208, 0.75);
+}
+
+.astroglo-offer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.astroglo-offer__badge,
+.astroglo-offer__price,
+.astroglo-offer__compare {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3.2rem;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.astroglo-offer__badge {
+  padding: 0.6rem 0.9rem;
+  color: var(--astro-ink);
+  background: var(--astro-warm);
+  font-weight: 800;
+}
+
+.astroglo-offer__price {
+  color: var(--astro-text);
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.astroglo-offer__compare {
+  color: rgba(255, 255, 255, 0.62);
+  text-decoration: line-through;
+}
+
+.astroglo-hero-proof {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 1rem;
+}
+
+.astroglo-hero-proof span {
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 50%;
+  background: var(--astro-warm);
+}
+
+.astroglo-hero-proof p {
+  margin: 0 0 0 0.35rem;
+  color: #f4e6b3;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.astroglo-hero__heading {
+  max-width: 11em;
+  margin: 0;
+  color: var(--astro-text);
+  font-size: 3.15rem;
+  line-height: 1.05;
+}
+
+.astroglo-hero__subtitle {
+  max-width: 52rem;
+  margin: 1.1rem 0 0;
+  color: var(--astro-muted);
+  font-size: 1.45rem;
+  line-height: 1.42;
+}
+
+.astroglo-hero__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.astroglo-hero__chips li {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--astro-line);
+  border-radius: 8px;
+  color: #f6f7f9;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+.astroglo-hero__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-top: 1.6rem;
+}
+
+.astroglo-hero__button.button {
+  width: 100%;
+  min-height: 4.8rem;
+  border: 0;
+  color: var(--astro-ink);
+  background: var(--astro-warm);
+  font-weight: 900;
+}
+
+.astroglo-hero__button.button::before,
+.astroglo-hero__button.button::after {
+  box-shadow: none;
+}
+
+.astroglo-hero__microcopy {
+  margin: 0;
+  color: #f4e6b3;
+  font-size: 1.2rem;
+  line-height: 1.45;
+}
+
+.astroglo-hero__visual {
+  order: 1;
+  display: flex;
+  justify-content: center;
+  min-height: 17rem;
+}
+
+.astroglo-hero-gallery {
+  display: grid;
+  gap: 0.8rem;
+  width: 100%;
+}
+
+.astroglo-hero-gallery__main {
+  display: grid;
+  place-items: center;
+  min-height: 24rem;
+  border: 1px solid var(--astro-line);
+  border-radius: 8px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(56, 232, 208, 0.24), transparent 40%),
+    #0d0d12;
+}
+
+.astroglo-hero-gallery__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 38rem;
+  object-fit: contain;
+}
+
+.astroglo-hero-gallery__thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.astroglo-hero-gallery__thumb {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  border: 1px solid var(--astro-line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.astroglo-hero-gallery__thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.astroglo-product-price {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+  margin-top: 1.4rem;
+}
+
+.astroglo-product-price__current {
+  color: var(--astro-text);
+  font-size: 2.6rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.astroglo-product-price__compare {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: line-through;
+}
+
+.astroglo-product-price__badge {
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  color: var(--astro-ink);
+  background: var(--astro-warm);
+  font-size: 1.1rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.astroglo-product-form {
+  display: block;
+  margin-top: 1.4rem;
+}
+
+.astroglo-product-form__form {
+  display: grid;
+  gap: 1rem;
+}
+
+.astroglo-product-field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.astroglo-product-field__label {
+  color: var(--astro-text);
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.astroglo-product-field__select.select {
+  width: 100%;
+}
+
+.astroglo-product-field__select .select__select,
+.astroglo-product-quantity {
+  min-height: 4.8rem;
+  border: 1px solid var(--astro-line);
+  border-radius: 8px;
+  color: var(--astro-text);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.astroglo-product-field__select .select__select {
+  width: 100%;
+}
+
+.astroglo-product-quantity {
+  width: 9.6rem;
+  padding: 0 1.2rem;
+  font-size: 1.5rem;
+}
+
+.astroglo-scene {
+  position: relative;
+  width: min(72vw, 22rem);
+  aspect-ratio: 1;
+  border: 1px solid var(--astro-line);
+  border-radius: 8px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), transparent 48%),
+    #0d0d12;
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.45);
+}
+
+.astroglo-product-shot {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(72vw, 22rem);
+  aspect-ratio: 1;
+  border: 1px solid var(--astro-line);
+  border-radius: 8px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(56, 232, 208, 0.25), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 58%),
+    #0d0d12;
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.45);
+}
+
+.astroglo-product-shot::before {
+  content: "";
+  position: absolute;
+  inset: 10%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(244, 201, 80, 0.16), transparent 64%);
+  filter: blur(6px);
+}
+
+.astroglo-hero__image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 88%;
+  max-height: 88%;
+  object-fit: contain;
+}
+
+.astroglo-scene__beam {
+  position: absolute;
+  left: 18%;
+  bottom: 27%;
+  width: 65%;
+  height: 60%;
+  clip-path: polygon(41% 100%, 54% 100%, 100% 0, 0 0);
+  background:
+    linear-gradient(90deg, transparent, rgba(56, 232, 208, 0.36), rgba(255, 122, 92, 0.22), transparent),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.2), transparent);
+  filter: blur(0.2px);
+}
+
+.astroglo-scene__nebula {
+  position: absolute;
+  top: 12%;
+  left: 10%;
+  width: 78%;
+  height: 24%;
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, rgba(56, 232, 208, 0.22), rgba(244, 201, 80, 0.2), rgba(255, 122, 92, 0.22));
+  filter: blur(10px);
+}
+
+.astroglo-scene__star {
+  position: absolute;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.9);
+}
+
+.astroglo-scene__star--one {
+  top: 18%;
+  left: 24%;
+}
+
+.astroglo-scene__star--two {
+  top: 26%;
+  right: 20%;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.astroglo-scene__star--three {
+  top: 42%;
+  right: 32%;
+  width: 0.45rem;
+  height: 0.45rem;
+}
+
+.astroglo-astronaut {
+  position: absolute;
+  left: 50%;
+  bottom: 11%;
+  width: 12.2rem;
+  height: 17rem;
+  transform: translateX(-50%);
+}
+
+.astroglo-astronaut__helmet {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 8.8rem;
+  height: 8.8rem;
+  border: 0.9rem solid #f3f3f4;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  background: #191a22;
+  box-shadow: inset 0 0 0 0.4rem rgba(56, 232, 208, 0.22);
+}
+
+.astroglo-astronaut__visor {
+  position: absolute;
+  inset: 1.2rem;
+  border-radius: 50%;
+  background:
+    linear-gradient(140deg, rgba(56, 232, 208, 0.95), rgba(255, 122, 92, 0.55)),
+    #11131a;
+}
+
+.astroglo-astronaut__body {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 9.6rem;
+  height: 9.8rem;
+  border-radius: 4rem 4rem 2rem 2rem;
+  transform: translateX(-50%);
+  background: #f4f4f5;
+}
+
+.astroglo-astronaut__panel {
+  position: absolute;
+  left: 50%;
+  top: 9.6rem;
+  width: 4.8rem;
+  height: 3.2rem;
+  border-radius: 8px;
+  transform: translateX(-50%);
+  background:
+    linear-gradient(90deg, var(--astro-teal) 0 34%, var(--astro-coral) 34% 64%, var(--astro-warm) 64% 100%);
+}
+
+.astroglo-remote {
+  position: absolute;
+  right: 10%;
+  bottom: 14%;
+  width: 3.4rem;
+  height: 8.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 1.7rem;
+  background: #1c1d22;
+  transform: rotate(12deg);
+}
+
+.astroglo-remote::before,
+.astroglo-remote::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.astroglo-remote::before {
+  top: 1.1rem;
+  width: 1rem;
+  height: 1rem;
+  background: var(--astro-coral);
+}
+
+.astroglo-remote::after {
+  top: 3rem;
+  width: 1.4rem;
+  height: 3rem;
+  background:
+    radial-gradient(circle at 50% 0.4rem, #ffffff 0 0.25rem, transparent 0.3rem),
+    radial-gradient(circle at 50% 1.5rem, var(--astro-teal) 0 0.25rem, transparent 0.3rem),
+    radial-gradient(circle at 50% 2.6rem, var(--astro-warm) 0 0.25rem, transparent 0.3rem);
+}
+
+.astroglo-trust-bar {
+  color: var(--astro-text);
+  background: var(--astro-panel);
+  border-top: 1px solid var(--astro-line);
+  border-bottom: 1px solid var(--astro-line);
+}
+
+.astroglo-trust-bar__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.astroglo-trust-bar__item {
+  display: grid;
+  gap: 0.8rem;
+  align-content: start;
+  min-height: 11.2rem;
+  padding: 1.1rem;
+  border: 1px solid var(--astro-line);
+  border-radius: 8px;
+  background: var(--astro-panel-soft);
+}
+
+.astroglo-trust-bar__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  color: var(--astro-ink);
+  background: var(--astro-warm);
+}
+
+.astroglo-trust-bar__icon svg {
+  width: 1.55rem;
+  height: 1.55rem;
+}
+
+.astroglo-trust-bar__title {
+  display: block;
+  margin: 0;
+  color: var(--astro-text);
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.astroglo-trust-bar__text {
+  display: block;
+  margin: 0.3rem 0 0;
+  color: var(--astro-muted);
+  font-size: 1.15rem;
+  line-height: 1.35;
+}
+
+.astroglo-how {
+  color: var(--astro-ink);
+  background: var(--astro-cream);
+}
+
+.astroglo-how__header {
+  max-width: 68rem;
+  margin-bottom: 2.8rem;
+}
+
+.astroglo-how__eyebrow {
+  margin: 0 0 0.8rem;
+  color: #735c10;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.astroglo-how__heading {
+  margin: 0;
+  color: var(--astro-ink);
+  font-size: 3rem;
+  line-height: 1.1;
+}
+
+.astroglo-how__text {
+  max-width: 58rem;
+  margin: 1.2rem 0 0;
+  color: #4b4438;
+  font-size: 1.6rem;
+  line-height: 1.55;
+}
+
+.astroglo-how__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.astroglo-step {
+  position: relative;
+  min-height: 15rem;
+  padding: 1.8rem;
+  border: 1px solid rgba(21, 17, 11, 0.14);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.astroglo-step__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  margin-bottom: 2rem;
+  border-radius: 50%;
+  color: var(--astro-warm);
+  background: var(--astro-ink);
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.astroglo-step__title {
+  margin: 0;
+  color: var(--astro-ink);
+  font-size: 1.9rem;
+  line-height: 1.2;
+}
+
+.astroglo-step__text {
+  margin: 0.8rem 0 0;
+  color: #554d40;
+  font-size: 1.45rem;
+  line-height: 1.45;
+}
+
+.astroglo-statement {
+  color: var(--astro-text);
+  background: var(--astro-bg);
+}
+
+.astroglo-statement--light {
+  color: var(--astro-ink);
+  background: #ffffff;
+}
+
+.astroglo-statement__inner {
+  display: grid;
+  gap: 1rem;
+}
+
+.astroglo-section-label {
+  margin: 0;
+  color: var(--astro-warm);
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.astroglo-statement--light .astroglo-section-label {
+  color: #735c10;
+}
+
+.astroglo-statement__heading,
+.astroglo-section-heading {
+  margin: 0;
+  font-size: 2.7rem;
+  line-height: 1.1;
+}
+
+.astroglo-statement__heading {
+  max-width: 82rem;
+  color: inherit;
+}
+
+.astroglo-statement__text,
+.astroglo-section-text {
+  max-width: 68rem;
+  margin: 0;
+  color: var(--astro-muted);
+  font-size: 1.45rem;
+  line-height: 1.55;
+}
+
+.astroglo-statement--light .astroglo-statement__text,
+.astroglo-section-text {
+  color: #554d40;
+}
+
+.astroglo-benefits {
+  color: var(--astro-text);
+  background:
+    linear-gradient(180deg, rgba(244, 201, 80, 0.08), transparent 32%),
+    var(--astro-panel);
+}
+
+.astroglo-demo {
+  color: var(--astro-text);
+  background: var(--astro-bg);
+}
+
+.astroglo-demo__inner {
+  display: grid;
+  gap: 2rem;
+}
+
+.astroglo-demo__copy {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.astroglo-demo__points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin: 0.2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.astroglo-demo__points li {
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--astro-line);
+  border-radius: 8px;
+  color: #f6f7f9;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.astroglo-demo__button.button {
+  width: 100%;
+  min-height: 4.8rem;
+  border: 0;
+  color: var(--astro-ink);
+  background: var(--astro-warm);
+  font-weight: 900;
+}
+
+.astroglo-demo__button.button::before,
+.astroglo-demo__button.button::after {
+  box-shadow: none;
+}
+
+.astroglo-demo__visual {
+  min-height: 24rem;
+  border: 1px solid var(--astro-line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #0d0d12;
+}
+
+.astroglo-demo__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 24rem;
+  object-fit: cover;
+}
+
+.astroglo-demo-scene {
+  position: relative;
+  min-height: 24rem;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 26% 22%, rgba(56, 232, 208, 0.34), transparent 18%),
+    radial-gradient(circle at 70% 18%, rgba(255, 122, 92, 0.26), transparent 20%),
+    linear-gradient(180deg, #12121a, #070708 78%);
+}
+
+.astroglo-demo-scene__glow {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 13%;
+  height: 42%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 55%, rgba(56, 232, 208, 0.48), transparent 28%),
+    radial-gradient(circle at 62% 42%, rgba(244, 201, 80, 0.34), transparent 30%),
+    radial-gradient(circle at 76% 58%, rgba(255, 122, 92, 0.36), transparent 25%);
+  filter: blur(12px);
+}
+
+.astroglo-demo-scene__stars {
+  position: absolute;
+  inset: 0;
+  opacity: 0.9;
+  background-image:
+    radial-gradient(circle, #ffffff 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(56, 232, 208, 0.9) 0 1px, transparent 1.5px);
+  background-position:
+    16px 22px,
+    58px 74px;
+  background-size:
+    72px 72px,
+    106px 106px;
+}
+
+.astroglo-demo-scene__projector {
+  position: absolute;
+  left: 50%;
+  bottom: 2.2rem;
+  width: 8rem;
+  height: 10rem;
+  border-radius: 4rem 4rem 2.2rem 2.2rem;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(circle at 50% 22%, #14151c 0 2.2rem, #f2f2f4 2.25rem 3.2rem, transparent 3.25rem),
+    linear-gradient(180deg, #f4f4f5, #d9dbe0);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.46);
+}
+
+.astroglo-benefits__header,
+.astroglo-includes__header,
+.astroglo-faq__header {
+  display: grid;
+  gap: 0.9rem;
+  margin-bottom: 2.4rem;
+}
+
+.astroglo-benefits__grid,
+.astroglo-includes__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.astroglo-benefit,
+.astroglo-include {
+  display: grid;
+  gap: 0.8rem;
+  align-content: start;
+  min-height: 11rem;
+  padding: 1.35rem;
+  border: 1px solid var(--astro-line);
+  border-radius: 8px;
+}
+
+.astroglo-benefit {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.astroglo-benefit__icon,
+.astroglo-include__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+  color: var(--astro-ink);
+  background: var(--astro-warm);
+  font-weight: 800;
+}
+
+.astroglo-benefit__icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.astroglo-benefit__title,
+.astroglo-include__title {
+  margin: 0;
+  color: inherit;
+  font-size: 1.55rem;
+  line-height: 1.25;
+}
+
+.astroglo-benefit__text,
+.astroglo-include__text {
+  margin: 0;
+  color: var(--astro-muted);
+  font-size: 1.3rem;
+  line-height: 1.45;
+}
+
+.astroglo-includes,
+.astroglo-faq {
+  color: var(--astro-ink);
+  background: #ffffff;
+}
+
+.astroglo-include {
+  border-color: rgba(21, 17, 11, 0.14);
+  background: var(--astro-cream);
+}
+
+.astroglo-include__text {
+  color: #554d40;
+}
+
+.astroglo-faq__list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.astroglo-faq__item {
+  border: 1px solid rgba(21, 17, 11, 0.14);
+  border-radius: 8px;
+  background: var(--astro-cream);
+}
+
+.astroglo-faq__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.45rem 1.5rem;
+  color: var(--astro-ink);
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1.3;
+  cursor: pointer;
+}
+
+.astroglo-faq__summary::-webkit-details-marker {
+  display: none;
+}
+
+.astroglo-faq__summary::after {
+  content: "+";
+  flex: 0 0 auto;
+  color: #735c10;
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.astroglo-faq__item[open] .astroglo-faq__summary::after {
+  content: "-";
+}
+
+.astroglo-faq__answer {
+  margin: 0;
+  padding: 0 1.5rem 1.6rem;
+  color: #554d40;
+  font-size: 1.45rem;
+  line-height: 1.55;
+}
+
+.astroglo-final-cta {
+  color: var(--astro-text);
+  text-align: center;
+  background:
+    linear-gradient(135deg, rgba(56, 232, 208, 0.14), transparent 36%),
+    linear-gradient(315deg, rgba(255, 122, 92, 0.14), transparent 42%),
+    var(--astro-bg);
+}
+
+.astroglo-final-cta__inner {
+  display: grid;
+  justify-items: center;
+  gap: 1.6rem;
+}
+
+.astroglo-final-cta__heading {
+  max-width: 78rem;
+  margin: 0;
+  color: var(--astro-text);
+  font-size: 3rem;
+  line-height: 1.08;
+}
+
+.astroglo-final-cta__button.button {
+  width: 100%;
+  max-width: 34rem;
+  min-height: 5.2rem;
+  border: 0;
+  color: var(--astro-ink);
+  background: var(--astro-warm);
+  font-weight: 800;
+}
+
+.astroglo-final-cta__button.button::before,
+.astroglo-final-cta__button.button::after {
+  box-shadow: none;
+}
+
+.astroglo-sticky-actions {
+  background: transparent;
+}
+
+.astroglo-sticky-actions__spacer {
+  height: 8.8rem;
+}
+
+.astroglo-sticky-actions__bar {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 60;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.8rem;
+  padding: 0.9rem 1rem calc(0.9rem + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--astro-line);
+  background: rgba(7, 7, 8, 0.96);
+  box-shadow: 0 -12px 36px rgba(0, 0, 0, 0.35);
+}
+
+.astroglo-sticky-actions__order,
+.astroglo-sticky-actions__whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 5.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.astroglo-sticky-actions__order {
+  flex-direction: column;
+  padding: 0.7rem 1.2rem;
+  color: var(--astro-ink);
+  background: var(--astro-warm);
+  font-size: 1.55rem;
+  font-weight: 900;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.astroglo-sticky-actions__order small {
+  margin-top: 0.2rem;
+  color: rgba(21, 17, 11, 0.78);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.astroglo-sticky-actions__whatsapp {
+  flex-direction: column;
+  min-width: 7.6rem;
+  padding: 0.65rem;
+  border: 1px solid rgba(56, 232, 208, 0.36);
+  color: var(--astro-text);
+  background: rgba(56, 232, 208, 0.13);
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.astroglo-sticky-actions__whatsapp svg {
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-bottom: 0.35rem;
+}
+
+.astroglo-trust-note {
+  color: var(--astro-text);
+  background: var(--astro-panel);
+}
+
+.astroglo-trust-note__box {
+  display: grid;
+  gap: 1.1rem;
+  padding: 1.8rem;
+  border: 1px solid var(--astro-line);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(244, 201, 80, 0.1), transparent 38%),
+    rgba(255, 255, 255, 0.06);
+}
+
+.astroglo-trust-note__heading {
+  margin: 0;
+  color: var(--astro-text);
+  font-size: 2.5rem;
+  line-height: 1.12;
+}
+
+.astroglo-trust-note__text {
+  max-width: 76rem;
+  margin: 0;
+  color: var(--astro-muted);
+  font-size: 1.45rem;
+  line-height: 1.55;
+}
+
+@media screen and (min-width: 750px) {
+  .astroglo-hero__inner {
+    gap: 3.2rem;
+  }
+
+  .astroglo-hero__heading {
+    font-size: 5.4rem;
+  }
+
+  .astroglo-hero__subtitle {
+    font-size: 1.9rem;
+  }
+
+  .astroglo-hero__actions {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .astroglo-hero__button.button {
+    width: auto;
+    min-width: 22rem;
+  }
+
+  .astroglo-scene {
+    width: min(100%, 42rem);
+  }
+
+  .astroglo-product-shot {
+    width: min(100%, 42rem);
+  }
+
+  .astroglo-trust-bar__item {
+    min-height: 10rem;
+  }
+
+  .astroglo-how__heading {
+    font-size: 4rem;
+  }
+
+  .astroglo-statement__heading,
+  .astroglo-section-heading {
+    font-size: 4rem;
+  }
+
+  .astroglo-how__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .astroglo-benefits__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .astroglo-demo__inner {
+    grid-template-columns: minmax(0, 0.92fr) minmax(32rem, 1.08fr);
+    align-items: center;
+  }
+
+  .astroglo-demo__button.button {
+    width: auto;
+    justify-self: start;
+    min-width: 20rem;
+  }
+
+  .astroglo-includes__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .astroglo-final-cta__heading {
+    font-size: 4.8rem;
+  }
+
+  .astroglo-trust-note__heading {
+    font-size: 3.7rem;
+  }
+
+  .astroglo-sticky-actions__spacer {
+    display: none;
+  }
+
+  .astroglo-sticky-actions__bar {
+    right: 2rem;
+    bottom: 2rem;
+    left: auto;
+    display: block;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .astroglo-sticky-actions__order {
+    display: none;
+  }
+
+  .astroglo-sticky-actions__whatsapp {
+    flex-direction: row;
+    min-width: 0;
+    min-height: 5.2rem;
+    padding: 0 1.35rem;
+    border-radius: 999px;
+    background: #123f38;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.28);
+  }
+
+  .astroglo-sticky-actions__whatsapp svg {
+    margin: 0 0.55rem 0 0;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .astroglo-hero__inner {
+    grid-template-columns: minmax(0, 1.05fr) minmax(32rem, 0.95fr);
+  }
+
+  .astroglo-hero__copy {
+    order: 1;
+  }
+
+  .astroglo-hero__visual {
+    order: 2;
+  }
+
+  .astroglo-hero__heading {
+    font-size: 6.2rem;
+  }
+
+  .astroglo-trust-bar__list,
+  .astroglo-how__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .astroglo-benefits__grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .astroglo-includes__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

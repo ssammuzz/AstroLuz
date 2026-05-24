@@ -1,0 +1,353 @@
+{{ 'astroglo-phase1.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign hero_product = section.settings.product
+  assign hero_variant = hero_product.first_available_variant | default: hero_product.selected_or_first_available_variant
+  assign hero_image = section.settings.image
+  assign product_form_id = 'astroluz-product-form-' | append: section.id
+  assign product_title = section.settings.heading
+  assign cta_link = section.settings.button_link
+
+  if hero_product != blank
+    assign product_title = hero_product.title
+    if hero_image == blank and hero_product.featured_media != blank
+      assign hero_image = hero_product.featured_media.preview_image
+    endif
+    if cta_link == blank
+      assign cta_link = hero_product.url
+    endif
+  endif
+
+  if cta_link == blank
+    assign cta_link = routes.all_products_collection_url
+  endif
+
+  assign image_alt = section.settings.image_alt | default: product_title
+  assign featured_media_alt = product_title
+  if hero_product != blank and hero_product.featured_media.alt != blank
+    assign featured_media_alt = hero_product.featured_media.alt
+  endif
+-%}
+
+<section id="inicio" class="astroglo-phase1 astroglo-hero">
+  <div class="page-width astroglo-hero__inner section-{{ section.id }}-padding">
+    <div class="astroglo-hero__visual">
+      {%- if hero_product != blank and hero_product.media.size > 0 -%}
+        <div class="astroglo-hero-gallery" aria-label="Galeria de {{ hero_product.title | escape }}">
+          <div class="astroglo-hero-gallery__main">
+            {{
+              hero_image
+              | image_url: width: 1000
+              | image_tag:
+                widths: '320, 480, 640, 800, 1000',
+                sizes: '(min-width: 990px) 46vw, 92vw',
+                alt: image_alt,
+                class: 'astroglo-hero-gallery__image',
+                loading: 'eager',
+                fetchpriority: 'high'
+            }}
+          </div>
+
+          {%- if hero_product.media.size > 1 -%}
+            <div class="astroglo-hero-gallery__thumbs" aria-label="Imagenes del producto">
+              {%- for media in hero_product.media limit: 4 -%}
+                {%- if media.preview_image != blank -%}
+                  {%- liquid
+                    assign thumb_alt = product_title
+                    if media.alt != blank
+                      assign thumb_alt = media.alt
+                    endif
+                  -%}
+                  <div class="astroglo-hero-gallery__thumb">
+                    {{
+                      media.preview_image
+                      | image_url: width: 180
+                      | image_tag:
+                        widths: '90, 140, 180',
+                        sizes: '72px',
+                        alt: thumb_alt,
+                        loading: 'lazy'
+                    }}
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- elsif hero_image != blank -%}
+        <div class="astroglo-product-shot">
+          {{
+            hero_image
+            | image_url: width: 900
+            | image_tag:
+              widths: '240, 320, 420, 560, 720, 900',
+              sizes: '(min-width: 990px) 420px, 72vw',
+              alt: image_alt,
+              class: 'astroglo-hero__image',
+              loading: 'eager',
+              fetchpriority: 'high'
+          }}
+        </div>
+      {%- else -%}
+        <div class="astroglo-scene" aria-hidden="true">
+          <span class="astroglo-scene__nebula"></span>
+          <span class="astroglo-scene__beam"></span>
+          <span class="astroglo-scene__star astroglo-scene__star--one"></span>
+          <span class="astroglo-scene__star astroglo-scene__star--two"></span>
+          <span class="astroglo-scene__star astroglo-scene__star--three"></span>
+          <span class="astroglo-remote"></span>
+          <div class="astroglo-astronaut">
+            <span class="astroglo-astronaut__helmet">
+              <span class="astroglo-astronaut__visor"></span>
+            </span>
+            <span class="astroglo-astronaut__body"></span>
+            <span class="astroglo-astronaut__panel"></span>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="astroglo-hero__copy">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="astroglo-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.review_text != blank -%}
+        <div class="astroglo-hero-proof" aria-label="{{ section.settings.review_text | escape }}">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <p>{{ section.settings.review_text | escape }}</p>
+        </div>
+      {%- endif -%}
+
+      <h1 class="astroglo-hero__heading">{{ product_title }}</h1>
+
+      {%- if section.settings.subheading != blank -%}
+        <p class="astroglo-hero__subtitle">{{ section.settings.subheading | escape }}</p>
+      {%- endif -%}
+
+      {%- if hero_variant != blank and hero_variant.price > 0 -%}
+        <div class="astroglo-product-price" id="price-{{ section.id }}">
+          <span class="astroglo-product-price__current">{{ hero_variant.price | money }}</span>
+          {%- if hero_variant.compare_at_price != blank and hero_variant.compare_at_price > hero_variant.price -%}
+            <span class="astroglo-product-price__compare">{{ hero_variant.compare_at_price | money }}</span>
+            {%- liquid
+              assign discount_amount = hero_variant.compare_at_price | minus: hero_variant.price
+              assign discount_percent = discount_amount | times: 100 | divided_by: hero_variant.compare_at_price
+            -%}
+            <span class="astroglo-product-price__badge">Ahorro {{ discount_percent }}%</span>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- if hero_product != blank -%}
+        <product-form class="astroglo-product-form" data-section-id="{{ section.id }}">
+          <div class="product-form__error-message-wrapper" role="alert" hidden>
+            <span class="svg-wrapper">{{ 'icon-error.svg' | inline_asset_content }}</span>
+            <span class="product-form__error-message"></span>
+          </div>
+
+          {%- form 'product',
+            hero_product,
+            id: product_form_id,
+            class: 'form astroglo-product-form__form',
+            novalidate: 'novalidate',
+            data-type: 'add-to-cart-form'
+          -%}
+            {%- if hero_product.has_only_default_variant -%}
+              <input
+                type="hidden"
+                name="id"
+                value="{{ hero_variant.id }}"
+                class="product-variant-id"
+                {% unless hero_variant.available %}
+                  disabled
+                {% endunless %}
+              >
+            {%- else -%}
+              <div class="astroglo-product-field">
+                <label class="astroglo-product-field__label" for="Variant-{{ section.id }}">Variante</label>
+                <div class="select astroglo-product-field__select">
+                  <select id="Variant-{{ section.id }}" name="id" class="select__select product-variant-id">
+                    {%- for variant in hero_product.variants -%}
+                      <option
+                        value="{{ variant.id }}"
+                        {% if variant == hero_variant %}
+                          selected="selected"
+                        {% endif %}
+                        {% unless variant.available %}
+                          disabled
+                        {% endunless %}
+                      >
+                        {{ variant.title | escape }} - {{ variant.price | money }}
+                        {%- unless variant.available -%}
+                          / Agotado
+                        {%- endunless -%}
+                      </option>
+                    {%- endfor -%}
+                  </select>
+                  <span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span>
+                </div>
+              </div>
+            {%- endif -%}
+
+            <div class="astroglo-product-field astroglo-product-field--quantity">
+              <label class="astroglo-product-field__label" for="Quantity-{{ section.id }}">Cantidad</label>
+              <input
+                id="Quantity-{{ section.id }}"
+                class="quantity__input astroglo-product-quantity"
+                type="number"
+                name="quantity"
+                value="{{ hero_variant.quantity_rule.min | default: 1 }}"
+                min="{{ hero_variant.quantity_rule.min | default: 1 }}"
+                {% if hero_variant.quantity_rule.max != null %}
+                  max="{{ hero_variant.quantity_rule.max }}"
+                {% endif %}
+                step="{{ hero_variant.quantity_rule.increment | default: 1 }}"
+              >
+            </div>
+
+            <button
+              id="ProductSubmitButton-{{ section.id }}"
+              type="submit"
+              name="add"
+              class="product-form__submit button button--primary astroglo-hero__button"
+              {% unless hero_variant.available %}
+                disabled
+              {% endunless %}
+            >
+              <span>
+                {%- if hero_variant.available -%}
+                  {{ section.settings.button_label | escape }}
+                {%- else -%}
+                  Agotado
+                {%- endif -%}
+              </span>
+              {%- render 'loading-spinner' -%}
+            </button>
+          {%- endform -%}
+        </product-form>
+      {%- elsif section.settings.button_label != blank -%}
+        <a href="{{ cta_link }}" class="button button--primary astroglo-hero__button">
+          {{ section.settings.button_label | escape }}
+        </a>
+      {%- endif -%}
+
+      {%- if section.settings.microcopy != blank -%}
+        <p class="astroglo-hero__microcopy">{{ section.settings.microcopy | escape }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AstroLuz hero",
+  "tag": "section",
+  "class": "astroglo-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Etiqueta",
+      "default": "AstroLuz™ Proyector Galaxia Astronauta"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Producto"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Titulo si no hay producto",
+      "default": "Transforma tu habitacion en una galaxia en segundos"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subtitulo",
+      "default": "Proyector LED decorativo con efecto nebulosa, estrellas y control remoto. Ideal para habitaciones, setups, escritorios y regalos."
+    },
+    {
+      "type": "text",
+      "id": "review_text",
+      "label": "Texto de prueba social",
+      "default": "Clientes satisfechos"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Imagen alternativa"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Texto alternativo",
+      "default": "AstroLuz Proyector Galaxia Astronauta"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texto del boton",
+      "default": "Pedir ahora"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Enlace alternativo"
+    },
+    {
+      "type": "text",
+      "id": "microcopy",
+      "label": "Microcopy",
+      "default": "Paga al recibir • Confirmacion por WhatsApp • Envio en Colombia"
+    },
+    {
+      "type": "header",
+      "content": "Espaciado"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 24,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Espacio superior",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 24,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Espacio inferior",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "AstroLuz hero"
+    }
+  ]
+}
+{% endschema %}
