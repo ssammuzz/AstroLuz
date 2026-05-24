@@ -13,9 +13,12 @@
       "type": "astroglo-hero",
       "settings": {
         "eyebrow": "AstroLuz™ Proyector Galaxia Astronauta",
+        "product": "lampara-galaxia-astronauta",
         "heading": "Transforma tu habitación en una galaxia en segundos",
         "subheading": "Proyector LED decorativo con efecto nebulosa, estrellas y control remoto. Ideal para habitaciones, setups, escritorios y regalos.",
         "review_text": "Clientes satisfechos",
+        "image": "shopify://shop_images/1775849283astronauta_201.png",
+        "image_alt": "AstroLuz Proyector Galaxia Astronauta",
         "button_label": "Pedir ahora",
         "button_link": "/products/lampara-galaxia-astronauta",
         "microcopy": "Paga al recibir • Confirmación por WhatsApp • Envío en Colombia",
